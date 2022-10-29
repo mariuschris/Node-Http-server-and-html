@@ -1,0 +1,11 @@
+{
+  "name": "node-html-server",
+  "version": "1.0.0",
+  "description": "=> Creating a portfolio having the following HTML pages, a server and routes that render the html pages, having /home routes that redirects to the homepage",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Nwankwo Marius",
+  "license": "ISC"
+}
