@@ -2,10 +2,18 @@ const path = require('path')
 const fs = require('fs')
 const http = require('http')
 
-http.createServer((req, res) => {
-    fs.readFile('home.html', (err, data) => {
+const server = http.createServer((request, response) => {
+    let filepath = path.join(__dirname, 'template_pages', request.url === '/'? 'index.html': request.url)
+    fs.readFile(filepath, 'utf8', (err, data) => {
       if (err) throw err;
-      res.writeHead(200, {'Content-Type' : 'text/html'})
-      res.end()
+      response.writeHead(200, {'Content-Type' : 'text/html'})
+      response.end(data)
     })
-  }).listen(8000)
+
+  
+  })
+
+  const port = 8000;
+  server.listen(port ,() => {
+    console.log('Server is running on port 8000')
+})
